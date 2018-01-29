@@ -1,0 +1,194 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'i',
+1 verbose cli   '-g',
+1 verbose cli   'tplink-lightbulb' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.29
+4 verbose cache add [ 'tplink-lightbulb', null ]
+5 verbose cache add name=undefined spec="tplink-lightbulb" args=["tplink-lightbulb",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'tplink-lightbulb',
+6 verbose parsed url   path: 'tplink-lightbulb',
+6 verbose parsed url   href: 'tplink-lightbulb' }
+7 silly lockFile 6bbfdbfc-tplink-lightbulb tplink-lightbulb
+8 verbose lock tplink-lightbulb /home/pi/.npm/6bbfdbfc-tplink-lightbulb.lock
+9 silly lockFile 6bbfdbfc-tplink-lightbulb tplink-lightbulb
+10 silly lockFile 6bbfdbfc-tplink-lightbulb tplink-lightbulb
+11 verbose addNamed [ 'tplink-lightbulb', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile 9c53e913-tplink-lightbulb tplink-lightbulb@
+14 verbose lock tplink-lightbulb@ /home/pi/.npm/9c53e913-tplink-lightbulb.lock
+15 silly addNameRange { name: 'tplink-lightbulb', range: '*', hasData: false }
+16 verbose request where is /tplink-lightbulb
+17 verbose request registry https://registry.npmjs.org/
+18 verbose request id 848a1a0c885064a5
+19 verbose url raw /tplink-lightbulb
+20 verbose url resolving [ 'https://registry.npmjs.org/', './tplink-lightbulb' ]
+21 verbose url resolved https://registry.npmjs.org/tplink-lightbulb
+22 verbose request where is https://registry.npmjs.org/tplink-lightbulb
+23 info trying registry request attempt 1 at 10:15:13
+24 verbose etag "5a4816a7-14ae7"
+25 http GET https://registry.npmjs.org/tplink-lightbulb
+26 http 304 https://registry.npmjs.org/tplink-lightbulb
+27 silly registry.get cb [ 304,
+27 silly registry.get   { date: 'Sat, 27 Jan 2018 15:15:14 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     'cache-control': 'max-age=300',
+27 silly registry.get     etag: '"5a4816a7-14ae7"',
+27 silly registry.get     age: '160',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-atl6250-ATL',
+27 silly registry.get     'x-cache': 'HIT',
+27 silly registry.get     'x-cache-hits': '3',
+27 silly registry.get     'x-timer': 'S1517066114.139923,VS0,VE0',
+27 silly registry.get     vary: 'Accept-Encoding, Accept' } ]
+28 verbose etag https://registry.npmjs.org/tplink-lightbulb from cache
+29 silly addNameRange number 2 { name: 'tplink-lightbulb', range: '*', hasData: true }
+30 silly addNameRange versions [ 'tplink-lightbulb',
+30 silly addNameRange   [ '1.0.1',
+30 silly addNameRange     '1.0.0',
+30 silly addNameRange     '1.0.2',
+30 silly addNameRange     '1.0.3',
+30 silly addNameRange     '1.0.4',
+30 silly addNameRange     '1.0.5',
+30 silly addNameRange     '1.0.6',
+30 silly addNameRange     '1.0.7',
+30 silly addNameRange     '1.0.8',
+30 silly addNameRange     '1.0.9',
+30 silly addNameRange     '1.0.10',
+30 silly addNameRange     '1.0.11',
+30 silly addNameRange     '1.0.12',
+30 silly addNameRange     '1.0.13',
+30 silly addNameRange     '1.0.14',
+30 silly addNameRange     '1.0.15',
+30 silly addNameRange     '1.0.16',
+30 silly addNameRange     '1.0.17',
+30 silly addNameRange     '1.0.18',
+30 silly addNameRange     '1.0.20',
+30 silly addNameRange     '1.0.21',
+30 silly addNameRange     '1.0.22',
+30 silly addNameRange     '1.0.23',
+30 silly addNameRange     '1.0.24',
+30 silly addNameRange     '1.0.25',
+30 silly addNameRange     '1.0.27',
+30 silly addNameRange     '1.1.0',
+30 silly addNameRange     '1.1.4',
+30 silly addNameRange     '1.1.5',
+30 silly addNameRange     '1.1.6',
+30 silly addNameRange     '1.1.7',
+30 silly addNameRange     '1.1.8',
+30 silly addNameRange     '1.1.9',
+30 silly addNameRange     '1.2.0',
+30 silly addNameRange     '1.2.1',
+30 silly addNameRange     '1.2.2',
+30 silly addNameRange     '1.2.3',
+30 silly addNameRange     '1.2.4',
+30 silly addNameRange     '1.2.5',
+30 silly addNameRange     '1.2.6',
+30 silly addNameRange     '1.3.0',
+30 silly addNameRange     '1.3.1',
+30 silly addNameRange     '1.4.0',
+30 silly addNameRange     '1.4.1' ] ]
+31 verbose addNamed [ 'tplink-lightbulb', '1.4.1' ]
+32 verbose addNamed [ '1.4.1', '1.4.1' ]
+33 silly lockFile e1e354ed-tplink-lightbulb-1-4-1 tplink-lightbulb@1.4.1
+34 verbose lock tplink-lightbulb@1.4.1 /home/pi/.npm/e1e354ed-tplink-lightbulb-1-4-1.lock
+35 silly lockFile e1e354ed-tplink-lightbulb-1-4-1 tplink-lightbulb@1.4.1
+36 silly lockFile e1e354ed-tplink-lightbulb-1-4-1 tplink-lightbulb@1.4.1
+37 silly lockFile 9c53e913-tplink-lightbulb tplink-lightbulb@
+38 silly lockFile 9c53e913-tplink-lightbulb tplink-lightbulb@
+39 silly resolved [ { name: 'tplink-lightbulb',
+39 silly resolved     version: '1.4.1',
+39 silly resolved     description: 'Control TP-Link smart-home devices from nodejs',
+39 silly resolved     main: 'build/lib.js',
+39 silly resolved     scripts:
+39 silly resolved      { release: 'npm version patch -m \'Bumped to %s.\' && npm publish',
+39 silly resolved        postversion: 'git push && git push --tags',
+39 silly resolved        build: 'babel src/lib.js > build/lib.js && babel src/cli.js > build/cli.js',
+39 silly resolved        doc: 'jsdoc2md src/lib.js',
+39 silly resolved        prepublish: 'npm run build' },
+39 silly resolved     bin: { tplight: 'build/cli.js' },
+39 silly resolved     repository:
+39 silly resolved      { type: 'git',
+39 silly resolved        url: 'git+https://github.com/konsumer/tplink-lightbulb.git' },
+39 silly resolved     author: { name: 'David Konsumer', email: 'konsumer@jetboystudio.com' },
+39 silly resolved     license: 'MIT',
+39 silly resolved     bugs: { url: 'https://github.com/konsumer/tplink-lightbulb/issues' },
+39 silly resolved     homepage: 'https://github.com/konsumer/tplink-lightbulb#readme',
+39 silly resolved     devDependencies:
+39 silly resolved      { 'babel-cli': '^6.26.0',
+39 silly resolved        'babel-preset-latest': '^6.24.1',
+39 silly resolved        'babel-preset-stage-2': '^6.24.1',
+39 silly resolved        'jsdoc-to-markdown': '^3.0.3' },
+39 silly resolved     keywords:
+39 silly resolved      [ 'tp-link',
+39 silly resolved        'lightbulb',
+39 silly resolved        'smartbulb',
+39 silly resolved        'smart-home',
+39 silly resolved        'LB120',
+39 silly resolved        'LB130',
+39 silly resolved        'HS100',
+39 silly resolved        'HS105',
+39 silly resolved        'HS110',
+39 silly resolved        'KP100' ],
+39 silly resolved     dependencies:
+39 silly resolved      { colorsys: '^1.0.19',
+39 silly resolved        'json-colorizer': '^1.1.0',
+39 silly resolved        'safe-buffer': '^5.1.1',
+39 silly resolved        yargs: '^10.0.3' },
+39 silly resolved     babel: { presets: [Object] },
+39 silly resolved     gitHead: '462f647c725b0314cf5fd57b39c7bfda1f1bbb2c',
+39 silly resolved     _id: 'tplink-lightbulb@1.4.1',
+39 silly resolved     _npmVersion: '5.6.0',
+39 silly resolved     _nodeVersion: '8.9.1',
+39 silly resolved     _npmUser: { name: 'konsumer', email: 'konsumer@jetboystudio.com' },
+39 silly resolved     dist:
+39 silly resolved      { integrity: 'sha512-C2E8NKACGyGSXljb0nk47JVZ4muJENpd+9ErsaVYVOGVgNy4XeC95OBDVpphL1PEwrER2Ah0QyTrqrFEb8yL9Q==',
+39 silly resolved        shasum: 'd268db802c8b5eebe3752059b97a50dd2b189bb9',
+39 silly resolved        tarball: 'https://registry.npmjs.org/tplink-lightbulb/-/tplink-lightbulb-1.4.1.tgz' },
+39 silly resolved     maintainers: [ [Object] ],
+39 silly resolved     _npmOperationalInternal:
+39 silly resolved      { host: 's3://npm-registry-packages',
+39 silly resolved        tmp: 'tmp/tplink-lightbulb-1.4.1.tgz_1514673830918_0.9433922811876982' },
+39 silly resolved     directories: {},
+39 silly resolved     _shasum: 'd268db802c8b5eebe3752059b97a50dd2b189bb9',
+39 silly resolved     _from: 'tplink-lightbulb@',
+39 silly resolved     _resolved: 'https://registry.npmjs.org/tplink-lightbulb/-/tplink-lightbulb-1.4.1.tgz',
+39 silly resolved     readme: 'ERROR: No README data found!' } ]
+40 info install tplink-lightbulb@1.4.1 into /usr/local/lib
+41 info installOne tplink-lightbulb@1.4.1
+42 verbose lib/node_modules/tplink-lightbulb unbuild
+43 info preuninstall tplink-lightbulb@1.4.1
+44 info uninstall tplink-lightbulb@1.4.1
+45 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild tplink-lightbulb@1.4.1
+46 verbose /usr/local/bin,[object Object] binRoot
+47 verbose lib/node_modules/tplink-lightbulb unbuild
+48 info preuninstall tplink-lightbulb@1.4.1
+49 info uninstall tplink-lightbulb@1.4.1
+50 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild tplink-lightbulb@1.4.1
+51 verbose /usr/local/bin,[object Object] binRoot
+52 error error rolling back Error: EACCES, unlink '/usr/local/bin/tplight'
+52 error error rolling back  tplink-lightbulb@1.4.1 { [Error: EACCES, unlink '/usr/local/bin/tplight'] errno: 3, code: 'EACCES', path: '/usr/local/bin/tplight' }
+53 error Error: EACCES, unlink '/usr/local/bin/tplight'
+53 error  { [Error: EACCES, unlink '/usr/local/bin/tplight'] errno: 3, code: 'EACCES', path: '/usr/local/bin/tplight' }
+54 error Please try running this command again as root/Administrator.
+55 error System Linux 4.9.35-v7+
+56 error command "/usr/bin/nodejs" "/usr/bin/npm" "i" "-g" "tplink-lightbulb"
+57 error cwd /home/pi/Documents/Home
+58 error node -v v0.10.29
+59 error npm -v 1.4.21
+60 error path /usr/local/bin/tplight
+61 error code EACCES
+62 error errno 3
+63 error stack Error: EACCES, unlink '/usr/local/bin/tplight'
+64 verbose exit [ 3, true ]
