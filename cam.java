@@ -42,7 +42,12 @@ public class cam {
     }
 
     public int biggestQuadrant(int[][] data) {
-	
+	//TODO
+	//Computes and returns which quadrant includes the
+	//most 'variance', i.e. the quadrant in which someone
+	//is sitting in the room.
+	//the returned quadrant is between 0 and 6, 0 being
+	//no variance (always starting on 0)
     }
 
     /** setLights()
