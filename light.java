@@ -1,16 +1,18 @@
 package LightCV;
 
 import java.util.*;
-import java.util.Scanner;
 import java.io.*;
 import org.json.simple.JSONObject;
+import java.net.InetAddress;
 
 public class light {
     private String ip = "";
     private int port = 9999;
     private boolean valid = false;
     private static final String LIGHT_INFO = "{\"system\" : {\"get_sysinfo\" : null}, \"emeter\" : {\"get_realtime\" : null}}";
-    private newPackage = "";
+    private static final String LIGHT_ON = "{\"system\":{\"set_relay_state\":{\"state\":1}}}";
+    private static final String LIGHT_OFF = "{\"system\":{\"set_relay_state\":{\"state\":0}}}";
+    private String newPackage = "";
 
     /** Constructors
     *
@@ -40,8 +42,9 @@ public class light {
     */
     public boolean checkIP(String ip_check) {
       JsonObject newPackage = sendPacket(ip_check);
-      if (newPack.isEmpty()) { return true; }
-      return false;
+      if (newPackage.isEmpty()) { return false; }
+      this.newPackage = null;
+      return true;
     }
 
     public String sendPacket(String package) {
@@ -49,25 +52,41 @@ public class light {
       OutputStream output = socket.getOutputStream();
       output.write(encrypt(package));
 
+
+
     }
 
     public int[] encrypt(String value) {
-      private int[] pack = new int[value.length()];
+      private int[] b = new int[value.length()];
       int k = 171;
       int t = 0;
       for (int i = 0; i < value.length(); i++) {
-        t     = value.charAt(i) ^ obfusc;
-        obfusc  = pack[i];
-        pack[i] = val;
+        t    = value.charAt(i) ^ k;
+        k    = pack[i];
+        b[i] = val;
       }
-      return
+      return b;
     }
-    public void scan() throws IOException, FileNotFoundException {
 
+    public int[] decrypt(String value) {
+      private int[] b = new int[value.length()];
+      int k = 171;
+      int t = 0;
+      for (int i = 0; i < value.length(); i++) {
+        b[i] = b[i] ^ k;
+        k    = b[i];
+      }
+      return b;
     }
+
+    /*
+    public void scan() throws IOException, FileNotFoundException {
+      n
+    }
+    */
 
     public void on() throws IOException {
-	    Process turnOn = Runtime.getRuntime().exec(on);
+
     }
 
     public void off() throws IOException {
@@ -92,6 +111,7 @@ public class light {
     *
     */
     public static void main(String[] args) {
-      System.out.println(encrypt(171).);
+      InetAddress ip = new InetAddress.getByName(getIP());
+      System.out.println(ip.isReachable);
     }
 }
