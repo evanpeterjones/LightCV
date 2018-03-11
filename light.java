@@ -1,38 +1,69 @@
-package Home;
+package LightCV;
 
 import java.util.*;
 import java.util.Scanner;
 import java.io.*;
+import org.json.simple.JSONObject;
 
 public class light {
     private String ip = "";
-    private String def = "tplight";
-    private String fileName = "ip.txt";
-    private String off = def + " off " + ip;
-    private String on = def + " on " + ip;
-    private String dim = def + "  " + ip;
+    private int port = 9999;
+    private boolean valid = false;
+    private static final String LIGHT_INFO = "{\"system\" : {\"get_sysinfo\" : null}, \"emeter\" : {\"get_realtime\" : null}}";
+    private newPackage = "";
 
-    public light() throws IOException {
-	    scan();
+    /** Constructors
+    *
+    * take values of IP and/or Port, and sets values accordingly
+    * also checking if they're valid.
+    *
+    */
+    public light(String IP) throws IOException {
+      this.ip = IP;
+      this.valid = checkIP(IP);
+      if (!valid) { System.out.println("Error: the IP Address " + this.ip + ""); }
+      if (valid) {  System.out.println(newPack()); }
     }
-    
+
+    public light(String IP, int Port) throws IOException {
+      this.ip = IP;
+      this.port = Port;
+      this.valid = checkIP(IP);
+      if (!valid) { System.out.println("Error: the IP Address " + this.ip + ""); }
+      if (valid) {  System.out.println(newPack()); }
+    }
+
+    /* checkIP()
+    *
+    *
+    *
+    */
+    public boolean checkIP(String ip_check) {
+      JsonObject newPackage = sendPacket(ip_check);
+      if (newPack.isEmpty()) { return true; }
+      return false;
+    }
+
+    public String sendPacket(String package) {
+      Socket socket = new Socket(getIP(), getPort());
+      OutputStream output = socket.getOutputStream();
+      output.write(encrypt(package));
+
+    }
+
+    public int[] encrypt(String value) {
+      private int[] pack = new int[value.length()];
+      int k = 171;
+      int t = 0;
+      for (int i = 0; i < value.length(); i++) {
+        t     = value.charAt(i) ^ obfusc;
+        obfusc  = pack[i];
+        pack[i] = val;
+      }
+      return
+    }
     public void scan() throws IOException, FileNotFoundException {
-    	String args = def + " scan -t 1 > " + fileName;
-        Process scan = Runtime.getRuntime().exec(args);
-	    parse(fileName);
-    }
 
-    public String parse(String file) throws FileNotFoundException {
-        String ips = "";
-        File ipad = new File(fileName);
-        Scanner read = new Scanner(ipad);
-        ips = read.nextLine();
-        read.close();
-        return ips.substring(0, 12);
-    }
-
-    public String getIP() {
-	return ip;
     }
 
     public void on() throws IOException {
@@ -47,13 +78,20 @@ public class light {
     	Process turnOff = Runtime.getRuntime().exec(dim);
     }
 
-    //    public void onColor(enum val){
-    //N	process turnOn = Runtime.getRuntime(___).start();
-    //    }
-	
-    /*  public static void main(String[] args) throws IOException{
-	scan();
-	ip = parse(fileName);
-	System.out.println(ip);
-	}*/
+    /** Getters and Setters
+    *
+    * sets and gets IP and Port
+    *
+    */
+    public String getIP() { return ip; }
+    public void setIP(String IP) { this.ip = IP; }
+    public void setPort(int thisPort) { this.port = thisPort; }
+    public int getPort() { return port; }
+
+    /** main
+    *
+    */
+    public static void main(String[] args) {
+      System.out.println(encrypt(171).);
+    }
 }
