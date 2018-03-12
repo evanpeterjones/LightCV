@@ -2,7 +2,8 @@ package LightCV;
 
 import java.util.*;
 import java.io.*;
-import org.json.simple.JSONObject;
+import org.json.*;
+import com.google.gson.JsonObject;
 import java.net.InetAddress;
 
 public class light {
@@ -24,7 +25,7 @@ public class light {
       this.ip = IP;
       this.valid = checkIP(IP);
       if (!valid) { System.out.println("Error: the IP Address " + this.ip + ""); }
-      if (valid) {  System.out.println(newPack()); }
+      if (valid) {  System.out.println(sendPacket(LIGHT_INFO)); }
     }
 
     public light(String IP, int Port) throws IOException {
@@ -32,7 +33,7 @@ public class light {
       this.port = Port;
       this.valid = checkIP(IP);
       if (!valid) { System.out.println("Error: the IP Address " + this.ip + ""); }
-      if (valid) {  System.out.println(newPack()); }
+      if (valid) {  System.out.println(sendPacket(LIGHT_INFO)); }
     }
 
     /* checkIP()
@@ -40,50 +41,51 @@ public class light {
     *
     *
     */
-    public boolean checkIP(String ip_check) {
-      JsonObject newPackage = sendPacket(ip_check);
+    public boolean checkIP(String IP_CHECK) {
+      JsonObject newPackage = sendPacket(IP_CHECK);
       if (newPackage.isEmpty()) { return false; }
       this.newPackage = null;
       return true;
     }
 
-    public String sendPacket(String package) {
+    public String sendPacket(String PACKAGE) {
       Socket socket = new Socket(getIP(), getPort());
       OutputStream output = socket.getOutputStream();
-      output.write(encrypt(package));
-
-
+      output.write(encrypt(PACKAGE));
+      InputStream in = socket.getInputStream();
+      String data = decrypt(in);
 
     }
 
-    public int[] encrypt(String value) {
-      private int[] b = new int[value.length()];
+    public int[] encrypt(String VALUE) {
+      int[] b = new int[VALUE.length()];
       int k = 171;
       int t = 0;
-      for (int i = 0; i < value.length(); i++) {
-        t    = value.charAt(i) ^ k;
+      for (int i = 0; i < VALUE.length(); i++) {
+        t    = VALUE.charAt(i) ^ k;
         k    = pack[i];
         b[i] = val;
       }
       return b;
     }
 
-    public int[] decrypt(String value) {
-      private int[] b = new int[value.length()];
+    public String decrypt(InputStream INPUT) throws IOException {
+      String test;
+      int val = 0;
       int k = 171;
       int t = 0;
-      for (int i = 0; i < value.length(); i++) {
-        b[i] = b[i] ^ k;
-        k    = b[i];
+      while ((val = INPUT.read()) != -1) {
+        test += (char) val ^ k;
+        k    = val;
       }
-      return b;
+      return test;
     }
 
     /*
     public void scan() throws IOException, FileNotFoundException {
       n
     }
-    */
+
 
     public void on() throws IOException {
 
@@ -91,7 +93,7 @@ public class light {
 
     public void off() throws IOException {
     	Process turnOff = Runtime.getRuntime().exec(off);
-    }
+    }jsonobject java
 
     public void dim() throws IOException {
     	Process turnOff = Runtime.getRuntime().exec(dim);
@@ -111,7 +113,8 @@ public class light {
     *
     */
     public static void main(String[] args) {
-      InetAddress ip = new InetAddress.getByName(getIP());
-      System.out.println(ip.isReachable);
+      light l = new light("192.168.0.155");
+      InetAddress ip = new InetAddress.getByName(l.getIP());
+      System.out.println(ip.isReachable());
     }
 }
